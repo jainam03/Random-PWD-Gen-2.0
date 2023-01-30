@@ -12,12 +12,30 @@
 
 body {
     font-size: auto;
+
+    background-image: linear-gradient(to right,#000428, #004e92);
+
+    color: wheat;
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 14px;
+    }
 }
 
 .header {
     text-align: center;
     padding: 10px 0 10px 0;
     margin: 15px 0 15px 0;
+}
+
+@media (max-width: 500px) {
+    .header {
+        text-align: center;
+        padding: 3px;
+        margin-top: 5px;
+    }
 }
 
 .header span {
@@ -30,13 +48,18 @@ body {
     margin: 5px 0;
 }
 
+.header span a {
+    color: white;
+}
+
 .main-card {
     display: flex;
     flex-direction: column;
     
-    height: 300px;
+    height: 400px;
     
-    background: rgb(191, 205, 246);
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
     border: none;
     border-radius: 20px;
 
@@ -44,6 +67,20 @@ body {
     padding: 30px 10px;
 
     font-size: 19px;
+    color: black;
+}
+
+@media (max-width: 500px) {
+    .main-card {
+
+        display: flex;
+        flex-direction: column;
+        padding: 4px 6px;
+        margin: 10px;
+        font-size: medium;
+
+        height: 300px;
+    }
 }
 
 .btn-div {
@@ -61,20 +98,66 @@ body {
     padding: 9px;
     border-radius: 7px;
     outline: none;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: none;
+    background: rgba(255,255,255,0.5);
 
     font-size: 18px;
     letter-spacing: normal;
+    transition: 0.2s;
 }
+
+#generate-btn:hover {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+#generate-btn:active {
+    transform: scale(0.99);
+}
+
+@media (max-width: 500px) {
+    #generate-btn {
+        font-size: medium;
+        background: rgba(255,255,255,0.3);
+        padding: 7px;
+        transition: 0.2s;
+        color: black;
+    }
+    #generate-btn:active {
+        transform: scale(0.96px);
+    }
+}
+
 #clear-btn {
     cursor: pointer;
     padding: 9px;
     border-radius: 7px;
     outline: none;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: none;
+    background: rgba(255,255,255,0.5);
 
     font-size: 18px;
     letter-spacing: normal;
+    transition: 0.2s;
+}
+#clear-btn:hover {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+#clear-btn:active {
+    transform: scale(0.99);
+}
+
+@media (max-width: 500px) {
+    #clear-btn {
+        font-size: medium;
+        background: rgba(255,255,255,0.3);
+        padding: 7px;
+        transition: 0.2s;
+        color: black;
+    }
+    #clear-btn:active {
+        transform: scale(0.96px);
+    }
 }
 
 .password-field {
@@ -83,10 +166,21 @@ body {
     padding: 5px 15px;
     margin: 5px 0 20px 0;
 
-    display: flex;
-    justify-content: center;
+    text-align: center;
 
     font-family: 'Consolas',serif;
+
+    color: rgb(120, 222, 219);
+}
+
+@media (max-width: 500px) {
+    .password-field {
+
+        display: flex;
+        justify-content: center;
+        padding: 3px;
+        margin: 0;
+    }
 }
 
 #passwords {
@@ -105,4 +199,21 @@ body {
 
     margin-top: 30px;
     padding: 0;
+}
+
+#github-icon {
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 500px) {
+    #github-icon {
+        background-color: wheat;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+    }
 }

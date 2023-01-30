@@ -18,7 +18,6 @@ function generate(length) {
         result1 += characters.charAt(Math.floor(Math.random() * charactersLength))
         result2 += characters.charAt(Math.floor(Math.random() * charactersLength))
     }
-
     passwordField.textContent = `${result1} AND ${result2}`
 
     generate(15)
@@ -28,6 +27,7 @@ clearBtn.addEventListener("click", function() {
     passwordField.textContent = ' '
     setTimeout(() => {
         window.location.reload()
+        return false
     }, 210)
      
     setTimeout(() => {
