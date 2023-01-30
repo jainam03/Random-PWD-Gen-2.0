@@ -2,10 +2,10 @@ let generateBtn = document.getElementById("generate-btn")
 let clearBtn = document.getElementById("clear-btn")
 let passwordField = document.getElementById("passwords")
 
-let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()_-+={,[,},],,,|,:,;,<,>,.?/";
+let characters = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%&";
 
 generateBtn.addEventListener("click",function() {
-    generate(15)
+    generate()
 })
 
 function generate(length) {
@@ -14,14 +14,23 @@ function generate(length) {
 
     const charactersLength = characters.length
 
-    for(let i=0; i<charactersLength; i++) {
-        result1 = characters.charAt(Math.floor(Math.random() * charactersLength))
-        result2 = characters.charAt(Math.floor(Math.random() * charactersLength))
+    for(let i=0; i<length; i++) {
+        result1 += characters.charAt(Math.floor(Math.random() * charactersLength))
+        result2 += characters.charAt(Math.floor(Math.random() * charactersLength))
     }
 
-    passwordField = `${result1} and ${result2}`
+    passwordField.textContent = `${result1} AND ${result2}`
 
     generate(15)
-
-
 }
+
+clearBtn.addEventListener("click", function() {
+    passwordField.textContent = ' '
+    setTimeout(() => {
+        window.location.reload()
+    }, 210)
+     
+    setTimeout(() => {
+        alert("All cleared")
+    }, 200)
+})
